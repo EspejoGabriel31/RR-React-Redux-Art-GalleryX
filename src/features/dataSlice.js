@@ -32,7 +32,7 @@ export const fetchData = () => {
     const dataThunk = async (dispatch, getState) => {
         let state = getState()
         console.log(state)
-        const res = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${state.apiData.id}`)
+        const res = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${state.data.id}`)
         const resData = await res.json()
         dispatch(setData(resData))
     }
